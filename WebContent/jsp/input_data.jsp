@@ -13,10 +13,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Bilangan to Bahasa</title>
 
 </head>
 <body>
+<center>
 	<h2><%=guesData.exampleString()%></h2>
 	<form method="post" action="#" >   
 	    <jsp:setProperty name="konverter"  property="*"  />
@@ -43,5 +44,11 @@
 	    	</tr>
 	    </table>
 	</form>
+	
+	<p>
+	<small>Dibuat oleh: Mohammad Fajar</small>
+	</p>
+
+</center>
 </body>
 </html>
