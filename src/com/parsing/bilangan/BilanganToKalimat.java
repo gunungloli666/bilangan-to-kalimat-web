@@ -13,13 +13,14 @@ public class BilanganToKalimat  {
 	
 	HashMap<Integer, String> map1 = new HashMap<>();
 
-	HashMap<Integer, String> map2 = new HashMap<>();
+	HashMap <  Integer, String  >  map2 = new HashMap<>();
 	
 	public String getBilanganKeluaran() {
 		return bilanganKeluaran;
 	}
 
 	public void setBilanganKeluaran(String bilanganKeluaran) {
+//		System.out.println("set bilangan keluaran");
 		this.bilanganKeluaran = bilanganKeluaran;
 	}
 
@@ -28,6 +29,7 @@ public class BilanganToKalimat  {
 	}
 	
 	public void setBilanganMasukan(String bilanganMasukan){
+//		System.out.println("set bilangan masukan");
 		this.bilanganMasukan = bilanganMasukan; 
 		hitungBilanganKeluaran();
 	}

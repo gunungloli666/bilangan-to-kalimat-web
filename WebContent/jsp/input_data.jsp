@@ -18,7 +18,7 @@
 </head>
 <body>
 	<h2><%=guesData.exampleString()%></h2>
-	<form method="post" action="input_data.jsp" >   
+	<form method="post" action="#" >   
 	    <jsp:setProperty name="konverter"  property="*"  />
 	    <table>
 	    	<% 
