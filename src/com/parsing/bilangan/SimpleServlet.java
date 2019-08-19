@@ -30,8 +30,8 @@ public class SimpleServlet extends HttpServlet{
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse  response) {
 		String  masukan = request.getParameter("bilanganMasukan");
-		bil.setBilanganMasukan(masukan);
-		String keluaran = bil.getBilanganKeluaran();
+		
+		String keluaran = bil.hitungBilanganKeluaran(masukan);
 		String output = ""; 
 		if(keluaran != null) {
 			output = keluaran;

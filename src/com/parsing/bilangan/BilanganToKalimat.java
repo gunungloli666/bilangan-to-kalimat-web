@@ -16,36 +16,18 @@ public class BilanganToKalimat  {
 	HashMap <  Integer, String  >  map2 = new HashMap<>();
 	
 
-	
-	public String getBilanganKeluaran() {
-		return bilanganKeluaran;
-	}
 
-	public void setBilanganKeluaran(String bilanganKeluaran) {
-//		System.out.println("set bilangan keluaran");
-		this.bilanganKeluaran = bilanganKeluaran;
-	}
-
-	public String getBilanganMasukan(){
-		return bilanganMasukan; 
-	}
 	
-	public void setBilanganMasukan(String bilanganMasukan){
-//		System.out.println("set bilangan masukan");
-		this.bilanganMasukan = bilanganMasukan; 
-		hitungBilanganKeluaran();
-	}
-	
-	
-	public void hitungBilanganKeluaran(){
-		if(bilanganMasukan != null && ! bilanganMasukan.equals("")){
+	public String hitungBilanganKeluaran(String input ){
+		if(input != null && ! input.equals("")){
 			try{
-				long angka = Long.parseLong(bilanganMasukan); 
+				long angka = Long.parseLong(input); 
 				String hasil = printBilanganToKalimat(angka); 
-				setBilanganKeluaran(CutLongString.CutString(hasil, 21, "<br />"));  
+				return CutLongString.CutString(hasil, 21, "<br />");  
 			}catch(Exception e){
 			}
 		}
+		return null; 
 	}
 		
 	public BilanganToKalimat(){
