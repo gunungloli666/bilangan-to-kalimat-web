@@ -56,7 +56,7 @@ String masukan = (String) request.getAttribute("masukan");
 
 
 
-<div style="position: absolute; top: 300px; width:100%;">
+<div style="position: absolute; top: 350px; width:100%;">
 <div style="position: relative; top:2px; " align="center">
 	<small>Dibuat oleh: Mohammad Fajar</small>
 </div>
