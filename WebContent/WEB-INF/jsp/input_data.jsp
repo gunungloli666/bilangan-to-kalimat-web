@@ -2,10 +2,10 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<jsp:useBean id="guesData" scope="request"
+<jsp:useBean id="guesData" scope="application"
 	class="com.fjr.helloworld.TestEnum"></jsp:useBean>
 
-<jsp:useBean id="konverter" scope="request"
+<jsp:useBean id="konverter" scope="application"
 	class="com.parsing.bilangan.BilanganToKalimat" >
 </jsp:useBean>
 
@@ -14,12 +14,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Bilangan to Bahasa</title>
-
+<%
+String path = request.getContextPath(); 
+%>
+<link rel="stylesheet" href="<%=path%>/style/w3.css" type="text/css" >
+<link rel="stylesheet" href="<%=path%>/style/xmain.css" type="text/css" >
 </head>
 <body>
 <center>
 	<h2><%=guesData.exampleString()%></h2>
-	<form method="post" action="#" >   
+	<form method="post" action="simple" >   
 	    <jsp:setProperty name="konverter"  property="*"  />
 	    <table>
 	    	<% 

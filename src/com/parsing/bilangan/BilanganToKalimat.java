@@ -15,6 +15,8 @@ public class BilanganToKalimat  {
 
 	HashMap <  Integer, String  >  map2 = new HashMap<>();
 	
+
+	
 	public String getBilanganKeluaran() {
 		return bilanganKeluaran;
 	}
@@ -47,6 +49,8 @@ public class BilanganToKalimat  {
 	}
 		
 	public BilanganToKalimat(){
+		
+		System.out.println("hai"); 
 		
 		map1.put(1, "satu");
 		map1.put(2, "dua");
