@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 
-.nav{
+.fjr-nav{
 	position: relative;
 	width: 20%; 
 	float: left; 
@@ -8,7 +8,7 @@
 	
 }
 
-.main{
+.fjr-main{
 	position: relative;
 	width: 80%;
 	float: right;

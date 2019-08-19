@@ -6,42 +6,65 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Bilangan to Bahasa</title>
 <%
 String path = request.getContextPath(); 
 %>
-<link rel="stylesheet" href="<%=path%>/style/w3.css" type="text/css" >
-<link rel="stylesheet" href="<%=path%>/style/xmain.css" type="text/css" >
+
 </head>
-<body>
+<body >
 
 <%
 String keluaran = (String ) request.getAttribute("keluaran");
 String masukan = (String) request.getAttribute("masukan"); 
 %>
+
+
 <center>
+
+<div >
 	<h2>Konversi Bilangan Ke Kalimat</h2>
-	<form method="post" action="simple" >   
+	
+	<p>Alat Konversi Dari Bilangan Ke Bahasa Indonesia</p>	
+	<form method="post" action="simple"  >   
 	    <table>
 	    	<tr>
 	    		<td>Bilangan Masukan:</td>
-	    		<td><input type="text" name="bilanganMasukan" value="<%=masukan%>"/>
-	    	</tr>
-	    	<tr>
-	    		<td>Hasil Konversi:</td>
-	    		<td><%=keluaran%></td>
-	    	</tr>
-	    	<tr>
+	    		<td><input type="text" name="bilanganMasukan" value="<%=masukan%>"/> 
+	    		
 	    		<td colspan="2"><input type="submit" value="Hitung" /> 
+	    
 	    	</tr>
+	    	<tr style="position: relative; top:2px; text-align: top;">
+	    		<td  valign="top" style="position: relative; top:2px; text-align: top;" >Hasil Konversi:</td>
+	    		<td><%=keluaran%></td>
+	    		<td></td>
+	    	</tr>
+	    	
 	    </table>
+
+
+
+
 	</form>
 	
-	<p>
+	
+
+</div>
+
+
+
+<div style="position: absolute; top: 300px; width:100%;">
+<div style="position: relative; top:2px; " align="center">
 	<small>Dibuat oleh: Mohammad Fajar</small>
-	</p>
+</div>
+</div>
 
 </center>
+
+
+
 </body>
 </html>
