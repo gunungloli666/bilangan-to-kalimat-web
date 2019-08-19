@@ -50,7 +50,7 @@ public class BilanganToKalimat  {
 		
 	public BilanganToKalimat(){
 		
-		System.out.println("hai"); 
+//		System.out.println("hai"); 
 		
 		map1.put(1, "satu");
 		map1.put(2, "dua");

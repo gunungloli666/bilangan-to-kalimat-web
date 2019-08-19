@@ -2,12 +2,6 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<jsp:useBean id="guesData" scope="application"
-	class="com.fjr.helloworld.TestEnum"></jsp:useBean>
-
-<jsp:useBean id="konverter" scope="application"
-	class="com.parsing.bilangan.BilanganToKalimat" >
-</jsp:useBean>
 
 
 <html>
@@ -21,27 +15,22 @@ String path = request.getContextPath();
 <link rel="stylesheet" href="<%=path%>/style/xmain.css" type="text/css" >
 </head>
 <body>
+
+<%
+String keluaran = (String ) request.getAttribute("keluaran");
+String masukan = (String) request.getAttribute("masukan"); 
+%>
 <center>
-	<h2><%=guesData.exampleString()%></h2>
+	<h2>Konversi Bilangan Ke Kalimat</h2>
 	<form method="post" action="simple" >   
-	    <jsp:setProperty name="konverter"  property="*"  />
 	    <table>
-	    	<% 
-	    			String data = konverter.getBilanganKeluaran(); 
-	    			String dataInput = konverter.getBilanganMasukan(); 
-	    	%>
 	    	<tr>
 	    		<td>Bilangan Masukan:</td>
-	    		
-	    		<td><input type="text" name="bilanganMasukan" 
-	    		<%if(dataInput!= null && ! dataInput.equals("")){ %>
-	    				value="<%= dataInput %>" 
-	    		<%}%>
-	    		 />
+	    		<td><input type="text" name="bilanganMasukan" value="<%=masukan%>"/>
 	    	</tr>
 	    	<tr>
 	    		<td>Hasil Konversi:</td>
-	    		<td><% if(data != null && ! data.equals("")){ %> <%= data%>  <% } %></td>
+	    		<td><%=keluaran%></td>
 	    	</tr>
 	    	<tr>
 	    		<td colspan="2"><input type="submit" value="Hitung" /> 
