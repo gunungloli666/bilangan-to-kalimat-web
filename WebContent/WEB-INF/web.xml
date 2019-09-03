@@ -16,14 +16,58 @@
   	<servlet-class>com.parsing.bilangan.SimpleServlet</servlet-class>
   </servlet>
   
+  <servlet>
+  	<servlet-name>simple.jsp</servlet-name>
+  	<servlet-class>com.parsing.bilangan.SimpleServlet</servlet-class>
+  </servlet>
+  
   
   <servlet-mapping>
   	<servlet-name>welcome</servlet-name>
   	<url-pattern>/welcome</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   <servlet-name>simple</servlet-name>
   <url-pattern>/simple</url-pattern>
   </servlet-mapping>
+
+<servlet-mapping>
+  <servlet-name>simple.jsp</servlet-name>
+  <url-pattern>/test /simple.asp</url-pattern>
+  </servlet-mapping>
+  
+<servlet>
+        <servlet-name>testform</servlet-name>
+    <servlet-class>com.fjr.action.TestForm</servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>testform</servlet-name>
+    <url-pattern>/testform</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>gotoFb</servlet-name>
+	<servlet-class>com.fjr.action.facebook.DoPage</servlet-class>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>gotoFb</servlet-name>
+	<url-pattern>/gotoFb</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>processFb</servlet-name>
+	<servlet-class>com.fjr.action.facebook.ProcessRequest</servlet-class>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>processFb</servlet-name>
+	<url-pattern>/processFb</url-pattern>
+</servlet-mapping>
+
+
+
+	
   
 </web-app>

@@ -40,8 +40,8 @@ public class SimpleServlet extends HttpServlet{
 		if(masukan!= null) {
 			bilMasuk = masukan ;
 		}
-		request.setAttribute("keluaran" , output);
-		request.setAttribute("masukan" , bilMasuk );
+		request.setAttribute( "keluaran" , output);
+		request.setAttribute( "masukan" , bilMasuk );
 		
 		
 		ServletContext sc = getServletContext();

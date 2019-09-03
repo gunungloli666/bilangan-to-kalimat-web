@@ -6,17 +6,10 @@ import java.util.HashMap;
 
 public class BilanganToKalimat  {
 	
-	
-	private String bilanganMasukan;
-	
-	private String bilanganKeluaran;
-	
 	HashMap<Integer, String> map1 = new HashMap<>();
 
 	HashMap <  Integer, String  >  map2 = new HashMap<>();
 	
-
-
 	
 	public String hitungBilanganKeluaran(String input ){
 		if(input != null && ! input.equals("")){
