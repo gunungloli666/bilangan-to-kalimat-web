@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<articlelist>
+<article articleid="PN001" category="j2ee">
+<detail text="J2EE Containers:&#13;&#10;The J2EE server provides underlying services to components using containers. Examples of J2EE containers are, Application Client Container, Applet Container, Web Container, and EJB Container.&#13;&#10;">
+<rating rating="7" userid="user2"/>
+</detail>
+</article>
+
+</articlelist>
