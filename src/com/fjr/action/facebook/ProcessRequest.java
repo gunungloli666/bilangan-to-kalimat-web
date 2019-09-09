@@ -91,14 +91,14 @@ public class ProcessRequest  extends HttpServlet{
 //		UserService service;
 		String host = "smtp.gmail.com";
 		String from = "fajar.kasimbar@gmail.com";
-//		Properties props = System.getProperties();
-		Properties props = new Properties();
-//		props.put("mail.smtp.host", host);
-//		props.put("mail.smtp.user", from);
-//		props.put("mail.smtp.password", "KasimBaR-p-21Z"  );
-//		props.put("mail.smtp.port", "587"); // 587 is the port number of yahoo mail
-//		props.put("mail.smtp.auth", "true");
-//		props.put("mail.smtp.starttls.enable", "true");
+		Properties props = System.getProperties();
+//		Properties props = new Properties();
+		props.put("mail.smtp.host", host);
+		props.put("mail.smtp.user", from);
+		props.put("mail.smtp.password", "KasimBaR-p-21Z"  );
+		props.put("mail.smtp.port", "587"); // 587 is the port number of yahoo mail
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
 
 		Session getMailSession = Session.getDefaultInstance(props, null);
 		MimeMessage generateMailMessage = new MimeMessage(getMailSession);
@@ -113,12 +113,12 @@ public class ProcessRequest  extends HttpServlet{
 			
 			Transport transport = getMailSession.getTransport("smtp");
 			
-//			transport.connect("smtp.googlemail.com", "fajar.kasimbar@gmail.com", "KasimBaR-p-21Z" );
-//			transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
+			transport.connect("smtp.googlemail.com", "fajar.kasimbar@gmail.com", "KasimBaR-p-21Z" );
+			transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
 			
-//			transport.close();
+			transport.close();
 
-			transport.send(generateMailMessage);
+//			Transport.send(generateMailMessage);
 		}catch(Exception e) {
 			System.out.println("mail.sending error"); 
 			e.printStackTrace();
