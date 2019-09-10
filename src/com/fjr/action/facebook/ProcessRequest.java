@@ -139,18 +139,14 @@ public class ProcessRequest  extends HttpServlet{
 		  Message msg = new MimeMessage(session);
 		  msg.setFrom(new InternetAddress("fajar.kasimbar@gmail.com", "Kue Bolu"));
 		  msg.addRecipient(Message.RecipientType.TO,
-		                   new InternetAddress("fajar.kasimbar.1@gmail.com", "Fajar"));
+		                   new InternetAddress("fajar.kasimbar@gmail.com", "Fajar"));
 		  msg.setSubject("Your Example.com account has been activated");
 		  msg.setText("This is a test");
 		  Transport.send(msg);
-		} catch (AddressException ex) {
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		  // ...
-		} catch (MessagingException e1) {
-		  // ...
-		} catch (UnsupportedEncodingException e2) {
-		  // ...
-		}
-
+		} 
 	}
 	
 	
