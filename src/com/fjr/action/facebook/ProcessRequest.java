@@ -5,14 +5,17 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.GenericArrayType;
 import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.Properties;
 
 import javax.mail.Message;
+import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServlet;
@@ -40,7 +43,8 @@ public class ProcessRequest  extends HttpServlet{
 		String nama = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (nama != null && password != null) {
-			processEmail(nama, password);
+//			processEmail(nama, password);
+			processMail2();
 			try {
 //				String path = getServletContext().getRealPath("/WEB-INF/file/userlist.xml");
 //				System.out.println(path);
@@ -125,6 +129,30 @@ public class ProcessRequest  extends HttpServlet{
 		}
 
 	}
+	
+	
+	public void processMail2() {
+		Properties props = new Properties();
+		Session session = Session.getDefaultInstance(props, null);
+
+		try {
+		  Message msg = new MimeMessage(session);
+		  msg.setFrom(new InternetAddress("fajar.kasimbar@gmail.com", "Kue Bolu"));
+		  msg.addRecipient(Message.RecipientType.TO,
+		                   new InternetAddress("fajar.kasimbar.1@gmail.com", "Fajar"));
+		  msg.setSubject("Your Example.com account has been activated");
+		  msg.setText("This is a test");
+		  Transport.send(msg);
+		} catch (AddressException ex) {
+		  // ...
+		} catch (MessagingException e1) {
+		  // ...
+		} catch (UnsupportedEncodingException e2) {
+		  // ...
+		}
+
+	}
+	
 	
 	public static void main(String[] args) {
 		String path = "D:/eclipse document 1/BilanganToBahasaKonverter/WebContent/WEB-INF/file/userlist.xml " ;
