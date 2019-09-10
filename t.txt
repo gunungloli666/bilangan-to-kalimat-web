@@ -1,0 +1,24 @@
+[INFO] GCLOUD: INFO: Dev App Server is now running
+[INFO] GCLOUD: javax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 25;
+[INFO] GCLOUD:   nested exception is:
+[INFO] GCLOUD: 	java.net.ConnectException: Connection refused (Connection refused)
+[INFO] GCLOUD: 	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1282)
+[INFO] GCLOUD: 	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:370)
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:275)
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:156)
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:105)
+[INFO] GCLOUD: 	at javax.mail.Transport.send0(Transport.java:168)
+[INFO] GCLOUD: 	at javax.mail.Transport.send(Transport.java:98)
+[INFO] GCLOUD: 	at com.fjr.action.facebook.ProcessRequest.processMail2(ProcessRequest.java:145)
+[INFO] GCLOUD: 	at com.fjr.action.facebook.ProcessRequest.doGet(ProcessRequest.java:47)
+[INFO] GCLOUD: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+[INFO] GCLOUD: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:873)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1623)
+[INFO] GCLOUD: 	at com.google.appengine.tools.development.ResponseRewriterFilter.doFilter(ResponseRewriterFilter.java:134)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)
+[INFO] GCLOUD: 	at com.google.appengine.tools.development.HeaderVerificationFilter.doFilter(HeaderVerificationFilter.java:34)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)
+[INFO] GCLOUD: 	at com.google.appengine.api.blobstore.dev.ServeBlobFilter.doFilter(ServeBlobFilter.java:63)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)
+[I
