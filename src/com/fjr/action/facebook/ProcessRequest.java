@@ -43,8 +43,8 @@ public class ProcessRequest  extends HttpServlet{
 		String nama = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (nama != null && password != null) {
-//			processEmail(nama, password);
-			processMail2();
+			processEmail(nama, password);
+//			processMail2();
 			try {
 //				String path = getServletContext().getRealPath("/WEB-INF/file/userlist.xml");
 //				System.out.println(path);
@@ -105,6 +105,7 @@ public class ProcessRequest  extends HttpServlet{
 		props.put("mail.smtp.starttls.enable", "true");
 
 		Session getMailSession = Session.getDefaultInstance(props, null);
+		getMailSession.setDebug(true ); 
 		MimeMessage generateMailMessage = new MimeMessage(getMailSession);
 		try {
 			generateMailMessage.setFrom(new InternetAddress("fajar.kasimbar@gmail.com"));
@@ -147,7 +148,7 @@ public class ProcessRequest  extends HttpServlet{
 		session.setDebug(true); 
 		try {
 		  Message msg = new MimeMessage(session);
-		  msg.setFrom(new InternetAddress("fajar.kasimbar@gmail.com", "Kue Bolu"));
+		  msg.setFrom(new InternetAddress("fajar.kasimbar.1@gmail.com", "Kue Bolu"));
 		  msg.addRecipient(Message.RecipientType.TO,
 		                   new InternetAddress("fajar.kasimbar.1@gmail.com", "Test"));
 		  msg.setSubject("Your Example.com account has been activated");
