@@ -134,7 +134,7 @@ public class ProcessRequest  extends HttpServlet{
 	public void processMail2() {
 		Properties props = new Properties();
 		Session session = Session.getDefaultInstance(props, null);
-
+		session.setDebug(true); 
 		try {
 		  Message msg = new MimeMessage(session);
 		  msg.setFrom(new InternetAddress("fajar.kasimbar@gmail.com", "Kue Bolu"));
