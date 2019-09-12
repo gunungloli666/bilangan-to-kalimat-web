@@ -1,0 +1,24 @@
+[INFO] GCLOUD: INFO: The admin console is running at http://localhost:8080/_ah/admin
+[INFO] GCLOUD: Sep 12, 2019 7:36:58 PM com.google.appengine.tools.development.DevAppServerImpl doStart
+[INFO] GCLOUD: INFO: Dev App Server is now running
+[INFO] GCLOUD: DEBUG: setDebug: JavaMail version 1.4ea
+[INFO] GCLOUD: DEBUG: getProvider() returning javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Sun Microsystems, Inc]
+[INFO] GCLOUD: DEBUG SMTP: useEhlo true, useAuth true
+[INFO] GCLOUD: javax.mail.AuthenticationFailedException
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:306)
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:156)
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:105)
+[INFO] GCLOUD: 	at javax.mail.Transport.send0(Transport.java:168)
+[INFO] GCLOUD: 	at javax.mail.Transport.send(Transport.java:98)
+[INFO] GCLOUD: 	at com.fjr.action.facebook.ProcessRequest.processMail2(ProcessRequest.java:155)
+[INFO] GCLOUD: 	at com.fjr.action.facebook.ProcessRequest.doGet(ProcessRequest.java:47)
+[INFO] GCLOUD: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+[INFO] GCLOUD: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:873)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1623)
+[INFO] GCLOUD: 	at com.google.appengine.tools.development.ResponseRewriterFilter.doFilter(ResponseRewriterFilter.java:134)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)
+[INFO] GCLOUD: 	at com.google.appengine.tools.development.HeaderVerificationFilter.doFilter(HeaderVerificationFilter.java:34)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)
+[INFO] GCLOUD: 	at com.google.appengine.api.blobstore.dev.ServeBlobFilter.doFilter(ServeBlobFilter.java:63)
+[
