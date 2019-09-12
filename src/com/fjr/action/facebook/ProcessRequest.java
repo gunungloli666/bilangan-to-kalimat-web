@@ -133,13 +133,23 @@ public class ProcessRequest  extends HttpServlet{
 	
 	public void processMail2() {
 		Properties props = new Properties();
+		String host = "smtp.gmail.com";
+		String from = "fajar.kasimbar@gmail.com";
+
+		props.put("mail.smtp.host", host);
+		props.put("mail.smtp.user", from);
+		props.put("mail.smtp.password", "KasimBaR-p-21Z"  );
+		props.put("mail.smtp.port", "587"); // 587 is the port number of yahoo mail
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+	
 		Session session = Session.getDefaultInstance(props, null);
 
 		try {
 		  Message msg = new MimeMessage(session);
 		  msg.setFrom(new InternetAddress("fajar.kasimbar@gmail.com", "Kue Bolu"));
 		  msg.addRecipient(Message.RecipientType.TO,
-		                   new InternetAddress("fajar.kasimbar@gmail.com", "Fajar"));
+		                   new InternetAddress("fajar.kasimbar.1@gmail.com", "Test"));
 		  msg.setSubject("Your Example.com account has been activated");
 		  msg.setText("This is a test");
 		  Transport.send(msg);
