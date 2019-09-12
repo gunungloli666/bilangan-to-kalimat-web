@@ -131,7 +131,7 @@ public class ProcessRequest  extends HttpServlet{
 	}
 	
 	
-	public void processMail2() {
+	public void processMail2() { ////////
 		Properties props = new Properties();
 		Session session = Session.getDefaultInstance(props, null);
 		session.setDebug(true); 
