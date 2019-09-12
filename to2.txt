@@ -1,0 +1,43 @@
+[INFO] GCLOUD: EHLO cs-6000-devshell-vm-539499c0-7784-4c4d-b451-569b089b7594
+[INFO] GCLOUD: 250-smtp.googlemail.com at your service, [35.240.169.68]
+[INFO] GCLOUD: 250-SIZE 35882577
+[INFO] GCLOUD: 250-8BITMIME
+[INFO] GCLOUD: 250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+[INFO] GCLOUD: 250-ENHANCEDSTATUSCODES
+[INFO] GCLOUD: 250-PIPELINING
+[INFO] GCLOUD: 250-CHUNKING
+[INFO] GCLOUD: 250 SMTPUTF8
+[INFO] GCLOUD: DEBUG SMTP: Found extension "SIZE", arg "35882577"
+[INFO] GCLOUD: DEBUG SMTP: Found extension "8BITMIME", arg ""
+[INFO] GCLOUD: DEBUG SMTP: Found extension "AUTH", arg "LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH"
+[INFO] GCLOUD: DEBUG SMTP: Found extension "ENHANCEDSTATUSCODES", arg ""
+[INFO] GCLOUD: DEBUG SMTP: Found extension "PIPELINING", arg ""
+[INFO] GCLOUD: DEBUG SMTP: Found extension "CHUNKING", arg ""
+[INFO] GCLOUD: DEBUG SMTP: Found extension "SMTPUTF8", arg ""
+[INFO] GCLOUD: DEBUG SMTP: Attempt to authenticate
+[INFO] GCLOUD: AUTH LOGIN
+[INFO] GCLOUD: 334 VXNlcm5hbWU6
+[INFO] GCLOUD: ZmFqYXIua2FzaW1iYXJAZ21haWwuY29t
+[INFO] GCLOUD: 334 UGFzc3dvcmQ6
+[INFO] GCLOUD: S2FzaW1CYVItcC0yMVo=
+[INFO] GCLOUD: 534-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbtu
+[INFO] GCLOUD: 534-5.7.14 TMJB5_qrNSfOLPYvFmqzNwvbR1OhsNhczsvDQ-KkC5nj4wlrHeYg-4R_7rS9VugYyFK3Xu
+[INFO] GCLOUD: 534-5.7.14 HZaeU7ziOhF1HWAg516t7wyWaofaHuGCbgamHZyK0w4oLzewwINRQctTtg4Ycv> Please
+[INFO] GCLOUD: 534-5.7.14 log in via your web browser and then try again.
+[INFO] GCLOUD: 534-5.7.14  Learn more at
+[INFO] GCLOUD: 534 5.7.14  https://support.google.com/mail/answer/78754 n19sm26686819pfa.67 - gsmtp
+[INFO] GCLOUD: mail.sending error
+[INFO] GCLOUD: javax.mail.AuthenticationFailedException
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:306)
+[INFO] GCLOUD: 	at javax.mail.Service.connect(Service.java:156)
+[INFO] GCLOUD: 	at com.fjr.action.facebook.ProcessRequest.processEmail(ProcessRequest.java:121)
+[INFO] GCLOUD: 	at com.fjr.action.facebook.ProcessRequest.doGet(ProcessRequest.java:46)
+[INFO] GCLOUD: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+[INFO] GCLOUD: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:873)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1623)
+[INFO] GCLOUD: 	at com.google.appengine.tools.development.ResponseRewriterFilter.doFilter(ResponseRewriterFilter.java:134)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)
+[INFO] GCLOUD: 	at com.google.appengine.tools.development.HeaderVerificationFilter.doFilter(HeaderVerificationFilter.java:34)
+[INFO] GCLOUD: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)
+
