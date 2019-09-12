@@ -131,7 +131,7 @@ public class ProcessRequest  extends HttpServlet{
 	}
 	
 	
-	public void processMail2() {
+	public void processMail2() { ////////
 		Properties props = new Properties();
 		String host = "smtp.gmail.com";
 		String from = "fajar.kasimbar@gmail.com";
@@ -144,7 +144,7 @@ public class ProcessRequest  extends HttpServlet{
 		props.put("mail.smtp.starttls.enable", "true");
 	
 		Session session = Session.getDefaultInstance(props, null);
-
+		session.setDebug(true); 
 		try {
 		  Message msg = new MimeMessage(session);
 		  msg.setFrom(new InternetAddress("fajar.kasimbar@gmail.com", "Kue Bolu"));
